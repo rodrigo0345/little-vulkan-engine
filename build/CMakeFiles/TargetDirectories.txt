@@ -1,0 +1,3 @@
+/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles/VulkanTest.dir
+/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles/edit_cache.dir
+/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles/rebuild_cache.dir
