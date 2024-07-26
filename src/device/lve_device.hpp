@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../window/lve_window.hpp"
+#include <vulkan/vulkan_core.h>
 
 // std lib headers
 #include <string>
@@ -22,7 +23,7 @@ struct QueueFamilyIndices {
   bool isComplete() { return graphicsFamilyHasValue && presentFamilyHasValue; }
 };
 
-class MyEngineDevice {
+class LveDevice {
  public:
 #ifdef NDEBUG
   const bool enableValidationLayers = false;
@@ -30,14 +31,14 @@ class MyEngineDevice {
   const bool enableValidationLayers = true;
 #endif
 
-  MyEngineDevice(LveWindow &window);
-  ~MyEngineDevice();
+  LveDevice(LveWindow &window);
+  ~LveDevice();
 
   // Not copyable or movable
-  MyEngineDevice(const MyEngineDevice &) = delete;
-  void operator=(const MyEngineDevice &) = delete;
-  MyEngineDevice(MyEngineDevice &&) = delete;
-  MyEngineDevice &operator=(MyEngineDevice &&) = delete;
+  LveDevice(const LveDevice &) = delete;
+  void operator=(const LveDevice &) = delete;
+  LveDevice(LveDevice &&) = delete;
+  LveDevice &operator=(LveDevice &&) = delete;
 
   VkCommandPool getCommandPool() { return commandPool; }
   VkDevice device() { return device_; }

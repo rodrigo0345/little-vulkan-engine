@@ -1,10 +1,8 @@
-CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o: \
- /home/rodrigo0345/Work/vulkan-learning/src/app/lve_app.cpp \
+CMakeFiles/VulkanTest.dir/src/device/lve_device.cpp.o: \
+ /home/rodrigo0345/Work/vulkan-learning/src/device/lve_device.cpp \
  /usr/include/stdc-predef.h \
- /home/rodrigo0345/Work/vulkan-learning/src/app/lve_app.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../pipeline/lve_pipeline.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../pipeline/../device/lve_device.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../pipeline/../device/../window/lve_window.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/device/lve_device.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/device/../window/lve_window.hpp \
  /usr/include/c++/12/string \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -138,9 +136,11 @@ CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o: \
  /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
- /usr/include/c++/12/bits/vector.tcc /usr/include/c++/12/iostream \
- /usr/include/c++/12/ostream /usr/include/c++/12/ios \
- /usr/include/c++/12/exception /usr/include/c++/12/bits/exception_ptr.h \
+ /usr/include/c++/12/bits/vector.tcc /usr/include/c++/12/cstring \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/12/iostream /usr/include/c++/12/ostream \
+ /usr/include/c++/12/ios /usr/include/c++/12/exception \
+ /usr/include/c++/12/bits/exception_ptr.h \
  /usr/include/c++/12/bits/cxxabi_init_exception.h \
  /usr/include/c++/12/typeinfo /usr/include/c++/12/bits/nested_exception.h \
  /usr/include/c++/12/bits/ios_base.h /usr/include/c++/12/ext/atomicity.h \
@@ -174,4 +174,15 @@ CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o: \
  /usr/include/c++/12/bits/locale_facets.tcc \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
- /usr/include/c++/12/bits/istream.tcc
+ /usr/include/c++/12/bits/istream.tcc /usr/include/c++/12/set \
+ /usr/include/c++/12/bits/stl_tree.h \
+ /usr/include/c++/12/ext/aligned_buffer.h \
+ /usr/include/c++/12/bits/node_handle.h \
+ /usr/include/c++/12/bits/stl_set.h \
+ /usr/include/c++/12/bits/stl_multiset.h \
+ /usr/include/c++/12/bits/erase_if.h /usr/include/c++/12/unordered_set \
+ /usr/include/c++/12/bits/hashtable.h \
+ /usr/include/c++/12/bits/hashtable_policy.h /usr/include/c++/12/tuple \
+ /usr/include/c++/12/bits/uses_allocator.h \
+ /usr/include/c++/12/bits/enable_special_members.h \
+ /usr/include/c++/12/bits/unordered_set.h

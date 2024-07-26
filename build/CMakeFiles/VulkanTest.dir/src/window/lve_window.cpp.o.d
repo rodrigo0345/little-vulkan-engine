@@ -115,9 +115,8 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/12/bits/charconv.h \
- /usr/include/c++/12/bits/basic_string.tcc /usr/include/GLFW/glfw3.h \
- /usr/include/vulkan/vulkan.h /usr/include/vulkan/vk_platform.h \
- /usr/include/vulkan/vulkan_core.h \
+ /usr/include/c++/12/bits/basic_string.tcc \
+ /usr/include/vulkan/vulkan_core.h /usr/include/vulkan/vk_platform.h \
  /usr/include/vk_video/vulkan_video_codec_h264std.h \
  /usr/include/vk_video/vulkan_video_codecs_common.h \
  /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
@@ -129,5 +128,11 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: \
  /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
  /usr/include/vk_video/vulkan_video_codec_av1std.h \
  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
- /usr/include/vk_video/vulkan_video_codec_av1std.h /usr/include/GL/gl.h \
- /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h
+ /usr/include/vk_video/vulkan_video_codec_av1std.h \
+ /usr/include/GLFW/glfw3.h /usr/include/vulkan/vulkan.h \
+ /usr/include/vulkan/vulkan_core.h /usr/include/GL/gl.h \
+ /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
+ /usr/include/c++/12/stdexcept /usr/include/c++/12/exception \
+ /usr/include/c++/12/bits/exception_ptr.h \
+ /usr/include/c++/12/bits/cxxabi_init_exception.h \
+ /usr/include/c++/12/typeinfo /usr/include/c++/12/bits/nested_exception.h

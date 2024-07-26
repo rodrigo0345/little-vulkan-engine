@@ -153,6 +153,30 @@ src/app/lve_app.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.s
 .PHONY : src/app/lve_app.cpp.s
 
+src/device/lve_device.o: src/device/lve_device.cpp.o
+.PHONY : src/device/lve_device.o
+
+# target to build an object file
+src/device/lve_device.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/device/lve_device.cpp.o
+.PHONY : src/device/lve_device.cpp.o
+
+src/device/lve_device.i: src/device/lve_device.cpp.i
+.PHONY : src/device/lve_device.i
+
+# target to preprocess a source file
+src/device/lve_device.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/device/lve_device.cpp.i
+.PHONY : src/device/lve_device.cpp.i
+
+src/device/lve_device.s: src/device/lve_device.cpp.s
+.PHONY : src/device/lve_device.s
+
+# target to generate assembly for a file
+src/device/lve_device.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/device/lve_device.cpp.s
+.PHONY : src/device/lve_device.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -237,6 +261,9 @@ help:
 	@echo "... src/app/lve_app.o"
 	@echo "... src/app/lve_app.i"
 	@echo "... src/app/lve_app.s"
+	@echo "... src/device/lve_device.o"
+	@echo "... src/device/lve_device.i"
+	@echo "... src/device/lve_device.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
