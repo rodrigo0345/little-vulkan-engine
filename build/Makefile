@@ -177,6 +177,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/pipeline/lve_pipeline.o: src/pipeline/lve_pipeline.cpp.o
+.PHONY : src/pipeline/lve_pipeline.o
+
+# target to build an object file
+src/pipeline/lve_pipeline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o
+.PHONY : src/pipeline/lve_pipeline.cpp.o
+
+src/pipeline/lve_pipeline.i: src/pipeline/lve_pipeline.cpp.i
+.PHONY : src/pipeline/lve_pipeline.i
+
+# target to preprocess a source file
+src/pipeline/lve_pipeline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.i
+.PHONY : src/pipeline/lve_pipeline.cpp.i
+
+src/pipeline/lve_pipeline.s: src/pipeline/lve_pipeline.cpp.s
+.PHONY : src/pipeline/lve_pipeline.s
+
+# target to generate assembly for a file
+src/pipeline/lve_pipeline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.s
+.PHONY : src/pipeline/lve_pipeline.cpp.s
+
 src/window/lve_window.o: src/window/lve_window.cpp.o
 .PHONY : src/window/lve_window.o
 
@@ -216,6 +240,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/pipeline/lve_pipeline.o"
+	@echo "... src/pipeline/lve_pipeline.i"
+	@echo "... src/pipeline/lve_pipeline.s"
 	@echo "... src/window/lve_window.o"
 	@echo "... src/window/lve_window.i"
 	@echo "... src/window/lve_window.s"

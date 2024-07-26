@@ -1,8 +1,7 @@
-CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o: \
- /home/rodrigo0345/Work/vulkan-learning/src/app/lve_app.cpp \
+CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o: \
+ /home/rodrigo0345/Work/vulkan-learning/src/pipeline/lve_pipeline.cpp \
  /usr/include/stdc-predef.h \
- /home/rodrigo0345/Work/vulkan-learning/src/app/lve_app.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../pipeline/lve_pipeline.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/pipeline/lve_pipeline.hpp \
  /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -154,20 +153,8 @@ CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o: \
  /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
- /usr/include/c++/12/bits/vector.tcc \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../window/lve_window.hpp \
- /usr/include/GLFW/glfw3.h /usr/include/vulkan/vulkan.h \
- /usr/include/vulkan/vk_platform.h /usr/include/vulkan/vulkan_core.h \
- /usr/include/vk_video/vulkan_video_codec_h264std.h \
- /usr/include/vk_video/vulkan_video_codecs_common.h \
- /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
- /usr/include/vk_video/vulkan_video_codec_h264std.h \
- /usr/include/vk_video/vulkan_video_codec_h265std.h \
- /usr/include/vk_video/vulkan_video_codec_h265std_encode.h \
- /usr/include/vk_video/vulkan_video_codec_h265std.h \
- /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
- /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
- /usr/include/vk_video/vulkan_video_codec_av1std.h \
- /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
- /usr/include/vk_video/vulkan_video_codec_av1std.h /usr/include/GL/gl.h \
- /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h
+ /usr/include/c++/12/bits/vector.tcc /usr/include/c++/12/fstream \
+ /usr/include/c++/12/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h \
+ /usr/include/c++/12/bits/fstream.tcc
