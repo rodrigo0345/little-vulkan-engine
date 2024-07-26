@@ -1,5 +1,7 @@
 #include "lve_window.hpp"
 #include <GLFW/glfw3.h>
+#include <stdexcept>
+#include <vulkan/vulkan_core.h>
 
 namespace lve {
 LveWindow::LveWindow(int w, int h, std::string name)
@@ -27,4 +29,11 @@ LveWindow::~LveWindow() {
 }
 
 bool LveWindow::shouldClose() { return glfwWindowShouldClose(this->window); }
+
+void LveWindow::createWindowSurface(VkInstance instance,
+                                    VkSurfaceKHR *surface) {
+  if(glfwCreateWindowSurface(instance, window, nullptr, surface) != VK_SUCCESS){
+    throw std::runtime_error("ERROR: Failed to create window surface");
+  }
+} // namespace lve
 } // namespace lve

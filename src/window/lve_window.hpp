@@ -2,6 +2,7 @@
 
 // this helps at telling glfw that we will be using vulkan
 #include <string>
+#include <vulkan/vulkan_core.h>
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
@@ -26,5 +27,6 @@ public:
   LveWindow &operator=(const LveWindow &);
 
   bool shouldClose();
+  void createWindowSurface(VkInstance instance, VkSurfaceKHR *surface);
 };
 } // namespace lve
