@@ -5,6 +5,7 @@
 #include <vector>
 #include <vulkan/vulkan_core.h>
 
+
 namespace lve {
 
 struct PipelineConfigInfo {
@@ -29,7 +30,7 @@ public:
   ~LvePipeline(); 
 
   LvePipeline(const LvePipeline &) = delete;
-  void operator=(const LvePipeline &) = delete;
+  LvePipeline& operator=(const LvePipeline &) = delete;
 
   static PipelineConfigInfo defaultPipelineConfigInfo(uint32_t width,
                                                       uint32_t height);
