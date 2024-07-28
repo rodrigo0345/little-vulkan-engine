@@ -3,6 +3,7 @@
 #include "../device/lve_device.hpp"
 
 // vulkan headers
+#include <memory>
 #include <vulkan/vulkan.h>
 
 // std lib headers
@@ -15,6 +16,7 @@ class LveSwapChain {
   static constexpr int MAX_FRAMES_IN_FLIGHT = 2;
 
   LveSwapChain(LveDevice &deviceRef, VkExtent2D windowExtent);
+  LveSwapChain(LveDevice &deviceRef, VkExtent2D windowExtent, std::shared_ptr<LveSwapChain> previous);
   ~LveSwapChain();
 
   LveSwapChain(const LveSwapChain &) = delete;
@@ -44,6 +46,7 @@ class LveSwapChain {
   void createRenderPass();
   void createFramebuffers();
   void createSyncObjects();
+  void init();
 
   // Helper functions
   VkSurfaceFormatKHR chooseSwapSurfaceFormat(
@@ -57,6 +60,8 @@ class LveSwapChain {
 
   std::vector<VkFramebuffer> swapChainFramebuffers;
   VkRenderPass renderPass;
+
+  std::shared_ptr<LveSwapChain> oldSwapChain;
 
   std::vector<VkImage> depthImages;
   std::vector<VkDeviceMemory> depthImageMemorys;

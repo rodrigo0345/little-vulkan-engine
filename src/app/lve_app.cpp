@@ -1,82 +1,119 @@
 #include "lve_app.hpp"
-#include <GLFW/glfw3.h>
+
+// std
 #include <array>
-#include <cstdint>
-#include <exception>
-#include <filesystem>
-#include <memory>
+#include <cassert>
+#include <glm/gtc/constants.hpp>
 #include <stdexcept>
-#include <vector>
+#include <utility>
 #include <vulkan/vulkan_core.h>
+
+#define GLM_FORCE_RADIANS
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
+#include <glm/glm.hpp>
 
 namespace lve {
 
+struct SimplePushConstantData {
+  glm::mat2 transform{1.0f};
+  glm::vec2 offset;
+  // isto existe??? Ao que parece
+  // é preciso ter muita atenção a isto quando
+  // se usa constants
+  alignas(16) glm::vec3 color;
+};
+
 FirstApp::FirstApp() {
-  loadModels();
+  loadGameObjects();
   createPipelineLayout();
   recreateSwapChain();
   createCommandBuffers();
 }
 
 FirstApp::~FirstApp() {
-  vkDestroyPipelineLayout(lveDevice.device(), this->pipelineLayout, nullptr);
+  vkDestroyPipelineLayout(lveDevice.device(), pipelineLayout, nullptr);
 }
 
 void FirstApp::run() {
   while (!lveWindow.shouldClose()) {
-    // get key structs, mouse, etc..
     glfwPollEvents();
-    this->drawFrame();
+    drawFrame();
   }
 
-  // espera que a gpu acabe tudo e só depois acaba o programa
   vkDeviceWaitIdle(lveDevice.device());
+}
+
+void FirstApp::loadGameObjects() {
+  std::vector<LveModel::Vertex> vertices{{{0.0f, -0.5f}, {1.0f, 0.0f, 0.0f}},
+                                         {{0.5f, 0.5f}, {0.0f, 1.0f, 0.0f}},
+                                         {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}};
+  auto lveModel = std::make_shared<LveModel>(lveDevice, vertices);
+
+  auto triangle = LveGameObject::createGameObject();
+
+  triangle.model = lveModel;
+  triangle.color = {.1f, .8f, .1f};
+  triangle.transform2d.translation.x = .2f;
+  triangle.transform2d.scale = {2.f, .5f};
+  triangle.transform2d.rotationAngle = 0.25f * glm::two_pi<float>();
+
+  gameObjects.push_back(std::move(triangle));
 }
 
 void FirstApp::createPipelineLayout() {
-  VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
 
-  // injeta diretamente nos shaders info adicional (layouts)
+  VkPushConstantRange pushConstantRange;
+  pushConstantRange.stageFlags =
+      VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
+  pushConstantRange.offset = 0;
+  pushConstantRange.size = sizeof(SimplePushConstantData);
+
+  VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
   pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
   pipelineLayoutInfo.setLayoutCount = 0;
   pipelineLayoutInfo.pSetLayouts = nullptr;
-  pipelineLayoutInfo.pushConstantRangeCount = 0;
-  pipelineLayoutInfo.pPushConstantRanges = nullptr;
-
+  pipelineLayoutInfo.pushConstantRangeCount = 1;
+  pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
   if (vkCreatePipelineLayout(lveDevice.device(), &pipelineLayoutInfo, nullptr,
                              &pipelineLayout) != VK_SUCCESS) {
-    throw std::runtime_error("ERROR: Failed to create pipeline layout");
+    throw std::runtime_error("failed to create pipeline layout!");
   }
 }
-void FirstApp::createPipeline() {
-  // não podemos ir buscar os pixeis diretamente às variaveis
-  // de width e height de FirstApp porque nos apple retina displays,
-  // 1px não é o mesmo que 1px nos outros monitores
-  auto pipelineConfig = LvePipeline::defaultPipelineConfigInfo(
-      lveSwapChain->width(), lveSwapChain->height());
-  pipelineConfig.renderPass = lveSwapChain->getRenderPass();
-  pipelineConfig.pipelineLayout = this->pipelineLayout;
 
-  // debug
-  std::cout << "Current path is " << std::filesystem::current_path() << '\n';
-  lvePipeline = std::make_unique<LvePipeline>(
-      lveDevice, "./shaders/build/simple_shader_vert.spv",
-      "./shaders/build/simple_shader_frag.spv", pipelineConfig);
-}
-
-void FirstApp::recreateSwapChain(){
+void FirstApp::recreateSwapChain() {
   auto extent = lveWindow.getExtent();
-
-  // isto pode acontecer ao minimizar uma janela
-  while(extent.width == 0 || extent.height == 0){
+  while (extent.width == 0 || extent.height == 0) {
     extent = lveWindow.getExtent();
     glfwWaitEvents();
   }
-
   vkDeviceWaitIdle(lveDevice.device());
 
-  lveSwapChain = std::make_unique<LveSwapChain>(lveDevice, extent);
+  if (lveSwapChain == nullptr) {
+    lveSwapChain = std::make_unique<LveSwapChain>(lveDevice, extent);
+  } else {
+    lveSwapChain = std::make_unique<LveSwapChain>(lveDevice, extent,
+                                                  std::move(lveSwapChain));
+    if (lveSwapChain->imageCount() != commandBuffers.size()) {
+      freeCommandBuffers();
+      createCommandBuffers();
+    }
+  }
+
   createPipeline();
+}
+
+void FirstApp::createPipeline() {
+  assert(lveSwapChain != nullptr && "Cannot create pipeline before swap chain");
+  assert(pipelineLayout != nullptr &&
+         "Cannot create pipeline before pipeline layout");
+
+  PipelineConfigInfo pipelineConfig{};
+  LvePipeline::defaultPipelineConfigInfo(pipelineConfig);
+  pipelineConfig.renderPass = lveSwapChain->getRenderPass();
+  pipelineConfig.pipelineLayout = pipelineLayout;
+  lvePipeline = std::make_unique<LvePipeline>(
+      lveDevice, "shaders/build/simple_shader_vert.spv",
+      "shaders/build/simple_shader_frag.spv", pipelineConfig);
 }
 
 void FirstApp::createCommandBuffers() {
@@ -90,9 +127,15 @@ void FirstApp::createCommandBuffers() {
 
   if (vkAllocateCommandBuffers(lveDevice.device(), &allocInfo,
                                commandBuffers.data()) != VK_SUCCESS) {
-    throw std::runtime_error("ERROR: Failed to allocate command buffers");
+    throw std::runtime_error("failed to allocate command buffers!");
   }
+}
 
+void FirstApp::freeCommandBuffers() {
+  vkFreeCommandBuffers(lveDevice.device(), lveDevice.getCommandPool(),
+                       static_cast<uint32_t>(commandBuffers.size()),
+                       commandBuffers.data());
+  commandBuffers.clear();
 }
 
 void FirstApp::recordCommandBuffer(int imageIndex) {
@@ -101,8 +144,7 @@ void FirstApp::recordCommandBuffer(int imageIndex) {
 
   if (vkBeginCommandBuffer(commandBuffers[imageIndex], &beginInfo) !=
       VK_SUCCESS) {
-    throw std::runtime_error(
-        "ERROR: Failed to start begin info command buffer");
+    throw std::runtime_error("failed to begin recording command buffer!");
   }
 
   VkRenderPassBeginInfo renderPassInfo{};
@@ -115,7 +157,6 @@ void FirstApp::recordCommandBuffer(int imageIndex) {
 
   std::array<VkClearValue, 2> clearValues{};
   clearValues[0].color = {0.1f, 0.1f, 0.1f, 1.0f};
-
   clearValues[1].depthStencil = {1.0f, 0};
   renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());
   renderPassInfo.pClearValues = clearValues.data();
@@ -123,100 +164,73 @@ void FirstApp::recordCommandBuffer(int imageIndex) {
   vkCmdBeginRenderPass(commandBuffers[imageIndex], &renderPassInfo,
                        VK_SUBPASS_CONTENTS_INLINE);
 
-  lvePipeline->bind(commandBuffers[imageIndex]);
+  VkViewport viewport{};
+  viewport.x = 0.0f;
+  viewport.y = 0.0f;
+  viewport.width = static_cast<float>(lveSwapChain->getSwapChainExtent().width);
+  viewport.height =
+      static_cast<float>(lveSwapChain->getSwapChainExtent().height);
+  viewport.minDepth = 0.0f;
+  viewport.maxDepth = 1.0f;
+  VkRect2D scissor{{0, 0}, lveSwapChain->getSwapChainExtent()};
+  vkCmdSetViewport(commandBuffers[imageIndex], 0, 1, &viewport);
+  vkCmdSetScissor(commandBuffers[imageIndex], 0, 1, &scissor);
 
-  lveModel->bind(commandBuffers[imageIndex]);
-  lveModel->draw(commandBuffers[imageIndex]);
+  this->renderGameObjects(commandBuffers[imageIndex]);
 
   vkCmdEndRenderPass(commandBuffers[imageIndex]);
-
   if (vkEndCommandBuffer(commandBuffers[imageIndex]) != VK_SUCCESS) {
-    throw std::runtime_error("ERROR: Failed to record command buffer");
+    throw std::runtime_error("failed to record command buffer!");
+  }
+}
+
+void FirstApp::renderGameObjects(VkCommandBuffer commandBuffer) {
+  lvePipeline->bind(commandBuffer);
+
+  for (auto &obj : gameObjects) {
+
+    obj.transform2d.rotationAngle =
+        glm::mod(obj.transform2d.rotationAngle + 0.0001f, glm::two_pi<float>());
+    // vamos desenhar 4 copias do nosso modelo
+    SimplePushConstantData push{};
+    push.offset = obj.transform2d.translation;
+    push.color = obj.color;
+    push.transform = obj.transform2d.mat2();
+
+    vkCmdPushConstants(commandBuffer, pipelineLayout,
+                       VK_SHADER_STAGE_VERTEX_BIT |
+                           VK_SHADER_STAGE_FRAGMENT_BIT,
+                       0, sizeof(SimplePushConstantData), &push);
+
+    obj.model->bind(commandBuffer);
+    obj.model->draw(commandBuffer);
   }
 }
 
 void FirstApp::drawFrame() {
   uint32_t imageIndex;
-
   auto result = lveSwapChain->acquireNextImage(&imageIndex);
 
-  if(result == VK_ERROR_OUT_OF_DATE_KHR) return recreateSwapChain();
+  if (result == VK_ERROR_OUT_OF_DATE_KHR) {
+    recreateSwapChain();
+    return;
+  }
 
   if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR) {
-    throw std::runtime_error("ERROR: Failed acquire swap chain image");
+    throw std::runtime_error("failed to acquire swap chain image!");
   }
 
   recordCommandBuffer(imageIndex);
-
-  // trata de enviar os nossos command buffers para a gpu
   result = lveSwapChain->submitCommandBuffers(&commandBuffers[imageIndex],
                                               &imageIndex);
-
-  // in case of resizee
-  if(result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR || lveWindow.wasWindowResized()){
+  if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR ||
+      lveWindow.wasWindowResized()) {
+    lveWindow.resetWindowResizedFlag();
     recreateSwapChain();
-    lveWindow.resetWindowResizedFlat();
-    return recreateSwapChain();
+    return;
+  } else if (result != VK_SUCCESS) {
+    throw std::runtime_error("failed to present swap chain image!");
   }
-
-  if (result != VK_SUCCESS) {
-    throw std::runtime_error("ERROR: Failed acquire swap chain image");
-  }
-}
-
-std::vector<LveModel::Vertex>
-sierpinskiTriangles(std::vector<LveModel::Vertex> parentTriangle,
-                    int currCount = 0, int limit = 8) {
-  if (currCount == limit) {
-    return parentTriangle;
-  }
-
-  // Calculate the midpoints of each edge of the parent triangle
-  LveModel::Vertex midpoint1{
-      {(parentTriangle[0].position.x + parentTriangle[1].position.x) / 2.0f,
-       (parentTriangle[0].position.y + parentTriangle[1].position.y) / 2.0f},
-      parentTriangle[0].color};
-
-  LveModel::Vertex midpoint2{
-      {(parentTriangle[1].position.x + parentTriangle[2].position.x) / 2.0f,
-       (parentTriangle[1].position.y + parentTriangle[2].position.y) / 2.0f},
-      parentTriangle[1].color};
-
-  LveModel::Vertex midpoint3{
-      {(parentTriangle[2].position.x + parentTriangle[0].position.x) / 2.0f,
-       (parentTriangle[2].position.y + parentTriangle[0].position.y) / 2.0f},
-      parentTriangle[2].color};
-
-  // Create the 3 new triangles
-  std::vector<LveModel::Vertex> t1 = {parentTriangle[0], midpoint1, midpoint3};
-  std::vector<LveModel::Vertex> t2 = {parentTriangle[1], midpoint2, midpoint1};
-  std::vector<LveModel::Vertex> t3 = {parentTriangle[2], midpoint3, midpoint2};
-
-  // Recursively divide the new triangles
-  auto res1 = sierpinskiTriangles(t1, currCount + 1, limit);
-  auto res2 = sierpinskiTriangles(t2, currCount + 1, limit);
-  auto res3 = sierpinskiTriangles(t3, currCount + 1, limit);
-
-  // Combine the results
-  std::vector<LveModel::Vertex> result;
-  result.reserve(res1.size() + res2.size() + res3.size());
-  result.insert(result.end(), res1.begin(), res1.end());
-  result.insert(result.end(), res2.begin(), res2.end());
-  result.insert(result.end(), res3.begin(), res3.end());
-
-  return result;
-}
-
-void FirstApp::loadModels() {
-  std::vector<LveModel::Vertex> verticesP{{{0.0f, -0.5f}, {0.0f, 1.0f, 0.0f}},
-                                          {{0.5f, 0.5f}, {1.0f, 0.0f, 0.0f}},
-                                          {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}};
-
-  auto vertices = sierpinskiTriangles(verticesP);
-  // auto vertices = verticesP;
-
-  lveModel = std::make_unique<LveModel>(lveDevice, vertices);
-  ;
 }
 
 } // namespace lve

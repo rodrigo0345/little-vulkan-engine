@@ -166,15 +166,20 @@ CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o: ../src/app/lve_app.cpp \
   /usr/include/c++/12/bits/stl_vector.h \
   /usr/include/c++/12/bits/stl_bvector.h \
   /usr/include/c++/12/bits/vector.tcc \
-  /usr/include/c++/12/iostream \
-  /usr/include/c++/12/ostream \
-  /usr/include/c++/12/ios \
-  /usr/include/c++/12/exception \
-  /usr/include/c++/12/bits/exception_ptr.h \
-  /usr/include/c++/12/bits/cxxabi_init_exception.h \
+  ../src/swap_chain/lve_swap_chain.hpp \
+  /usr/include/c++/12/memory \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/12/bits/align.h \
+  /usr/include/c++/12/bit \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/unique_ptr.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/shared_ptr.h \
+  /usr/include/c++/12/bits/shared_ptr_base.h \
   /usr/include/c++/12/typeinfo \
-  /usr/include/c++/12/bits/nested_exception.h \
-  /usr/include/c++/12/bits/ios_base.h \
+  /usr/include/c++/12/bits/allocated_ptr.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
   /usr/include/c++/12/ext/atomicity.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/gthr-default.h \
@@ -193,27 +198,17 @@ CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o: ../src/app/lve_app.cpp \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/atomic_word.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
-  /usr/include/c++/12/bits/locale_classes.h \
-  /usr/include/c++/12/bits/locale_classes.tcc \
-  /usr/include/c++/12/system_error \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h \
-  /usr/include/c++/12/stdexcept \
-  /usr/include/c++/12/streambuf \
-  /usr/include/c++/12/bits/streambuf.tcc \
-  /usr/include/c++/12/bits/basic_ios.h \
-  /usr/include/c++/12/bits/locale_facets.h \
-  /usr/include/c++/12/cwctype \
-  /usr/include/wctype.h \
-  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h \
-  /usr/include/c++/12/bits/streambuf_iterator.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h \
-  /usr/include/c++/12/bits/locale_facets.tcc \
-  /usr/include/c++/12/bits/basic_ios.tcc \
-  /usr/include/c++/12/bits/ostream.tcc \
-  /usr/include/c++/12/istream \
-  /usr/include/c++/12/bits/istream.tcc \
-  ../src/swap_chain/lve_swap_chain.hpp \
+  /usr/include/c++/12/ext/concurrence.h \
+  /usr/include/c++/12/exception \
+  /usr/include/c++/12/bits/exception_ptr.h \
+  /usr/include/c++/12/bits/cxxabi_init_exception.h \
+  /usr/include/c++/12/bits/nested_exception.h \
+  /usr/include/c++/12/bits/shared_ptr_atomic.h \
+  /usr/include/c++/12/bits/atomic_base.h \
+  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/12/backward/auto_ptr.h \
+  /usr/include/c++/12/pstl/glue_memory_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h \
   ../src/models/lve_model.hpp \
   /usr/include/glm/glm.hpp \
   /usr/include/glm/detail/_fixes.hpp \
@@ -390,49 +385,16 @@ CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o: ../src/app/lve_app.cpp \
   /usr/include/glm/detail/type_half.inl \
   /usr/include/glm/integer.hpp \
   /usr/include/glm/detail/func_integer.inl \
-  /usr/include/c++/12/memory \
-  /usr/include/c++/12/bits/stl_tempbuf.h \
-  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/12/bits/align.h \
-  /usr/include/c++/12/bit \
-  /usr/include/c++/12/bits/uses_allocator.h \
-  /usr/include/c++/12/bits/unique_ptr.h \
-  /usr/include/c++/12/tuple \
-  /usr/include/c++/12/bits/shared_ptr.h \
-  /usr/include/c++/12/bits/shared_ptr_base.h \
-  /usr/include/c++/12/bits/allocated_ptr.h \
-  /usr/include/c++/12/ext/aligned_buffer.h \
-  /usr/include/c++/12/ext/concurrence.h \
-  /usr/include/c++/12/bits/shared_ptr_atomic.h \
-  /usr/include/c++/12/bits/atomic_base.h \
-  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/12/backward/auto_ptr.h \
-  /usr/include/c++/12/pstl/glue_memory_defs.h \
-  /usr/include/c++/12/pstl/execution_defs.h \
+  ../src/game_object/lve_game_object.hpp \
   /usr/include/c++/12/array \
   /usr/include/c++/12/compare \
-  /usr/include/c++/12/filesystem \
-  /usr/include/c++/12/bits/fs_fwd.h \
-  /usr/include/c++/12/bits/chrono.h \
-  /usr/include/c++/12/ratio \
-  /usr/include/c++/12/ctime \
-  /usr/include/c++/12/bits/parse_numbers.h \
-  /usr/include/c++/12/bits/fs_path.h \
-  /usr/include/c++/12/locale \
-  /usr/include/c++/12/bits/locale_facets_nonio.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/time_members.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/messages_members.h \
-  /usr/include/libintl.h \
-  /usr/include/c++/12/bits/codecvt.h \
-  /usr/include/c++/12/bits/locale_facets_nonio.tcc \
-  /usr/include/c++/12/bits/locale_conv.h \
-  /usr/include/c++/12/iomanip \
-  /usr/include/c++/12/bits/quoted_string.h \
-  /usr/include/c++/12/sstream \
-  /usr/include/c++/12/bits/sstream.tcc \
-  /usr/include/c++/12/codecvt \
-  /usr/include/c++/12/bits/fs_dir.h \
-  /usr/include/c++/12/bits/fs_ops.h
+  /usr/include/glm/gtc/constants.hpp \
+  /usr/include/glm/ext/scalar_constants.hpp \
+  /usr/include/glm/ext/scalar_constants.inl \
+  /usr/include/glm/gtc/constants.inl \
+  /usr/include/c++/12/stdexcept \
+  /usr/include/c++/12/utility \
+  /usr/include/c++/12/bits/stl_relops.h
 
 CMakeFiles/VulkanTest.dir/src/device/lve_device.cpp.o: ../src/device/lve_device.cpp \
   /usr/include/stdc-predef.h \
@@ -827,15 +789,20 @@ CMakeFiles/VulkanTest.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/12/bits/stl_vector.h \
   /usr/include/c++/12/bits/stl_bvector.h \
   /usr/include/c++/12/bits/vector.tcc \
-  /usr/include/c++/12/iostream \
-  /usr/include/c++/12/ostream \
-  /usr/include/c++/12/ios \
-  /usr/include/c++/12/exception \
-  /usr/include/c++/12/bits/exception_ptr.h \
-  /usr/include/c++/12/bits/cxxabi_init_exception.h \
+  ../src/swap_chain/lve_swap_chain.hpp \
+  /usr/include/c++/12/memory \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/12/bits/align.h \
+  /usr/include/c++/12/bit \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/unique_ptr.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/shared_ptr.h \
+  /usr/include/c++/12/bits/shared_ptr_base.h \
   /usr/include/c++/12/typeinfo \
-  /usr/include/c++/12/bits/nested_exception.h \
-  /usr/include/c++/12/bits/ios_base.h \
+  /usr/include/c++/12/bits/allocated_ptr.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
   /usr/include/c++/12/ext/atomicity.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/gthr-default.h \
@@ -854,27 +821,17 @@ CMakeFiles/VulkanTest.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/atomic_word.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
-  /usr/include/c++/12/bits/locale_classes.h \
-  /usr/include/c++/12/bits/locale_classes.tcc \
-  /usr/include/c++/12/system_error \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h \
-  /usr/include/c++/12/stdexcept \
-  /usr/include/c++/12/streambuf \
-  /usr/include/c++/12/bits/streambuf.tcc \
-  /usr/include/c++/12/bits/basic_ios.h \
-  /usr/include/c++/12/bits/locale_facets.h \
-  /usr/include/c++/12/cwctype \
-  /usr/include/wctype.h \
-  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h \
-  /usr/include/c++/12/bits/streambuf_iterator.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h \
-  /usr/include/c++/12/bits/locale_facets.tcc \
-  /usr/include/c++/12/bits/basic_ios.tcc \
-  /usr/include/c++/12/bits/ostream.tcc \
-  /usr/include/c++/12/istream \
-  /usr/include/c++/12/bits/istream.tcc \
-  ../src/swap_chain/lve_swap_chain.hpp \
+  /usr/include/c++/12/ext/concurrence.h \
+  /usr/include/c++/12/exception \
+  /usr/include/c++/12/bits/exception_ptr.h \
+  /usr/include/c++/12/bits/cxxabi_init_exception.h \
+  /usr/include/c++/12/bits/nested_exception.h \
+  /usr/include/c++/12/bits/shared_ptr_atomic.h \
+  /usr/include/c++/12/bits/atomic_base.h \
+  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/12/backward/auto_ptr.h \
+  /usr/include/c++/12/pstl/glue_memory_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h \
   ../src/models/lve_model.hpp \
   /usr/include/glm/glm.hpp \
   /usr/include/glm/detail/_fixes.hpp \
@@ -1051,25 +1008,31 @@ CMakeFiles/VulkanTest.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/glm/detail/type_half.inl \
   /usr/include/glm/integer.hpp \
   /usr/include/glm/detail/func_integer.inl \
-  /usr/include/c++/12/memory \
-  /usr/include/c++/12/bits/stl_tempbuf.h \
-  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/12/bits/align.h \
-  /usr/include/c++/12/bit \
-  /usr/include/c++/12/bits/uses_allocator.h \
-  /usr/include/c++/12/bits/unique_ptr.h \
-  /usr/include/c++/12/tuple \
-  /usr/include/c++/12/bits/shared_ptr.h \
-  /usr/include/c++/12/bits/shared_ptr_base.h \
-  /usr/include/c++/12/bits/allocated_ptr.h \
-  /usr/include/c++/12/ext/aligned_buffer.h \
-  /usr/include/c++/12/ext/concurrence.h \
-  /usr/include/c++/12/bits/shared_ptr_atomic.h \
-  /usr/include/c++/12/bits/atomic_base.h \
-  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/12/backward/auto_ptr.h \
-  /usr/include/c++/12/pstl/glue_memory_defs.h \
-  /usr/include/c++/12/pstl/execution_defs.h
+  ../src/game_object/lve_game_object.hpp \
+  /usr/include/c++/12/iostream \
+  /usr/include/c++/12/ostream \
+  /usr/include/c++/12/ios \
+  /usr/include/c++/12/bits/ios_base.h \
+  /usr/include/c++/12/bits/locale_classes.h \
+  /usr/include/c++/12/bits/locale_classes.tcc \
+  /usr/include/c++/12/system_error \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h \
+  /usr/include/c++/12/stdexcept \
+  /usr/include/c++/12/streambuf \
+  /usr/include/c++/12/bits/streambuf.tcc \
+  /usr/include/c++/12/bits/basic_ios.h \
+  /usr/include/c++/12/bits/locale_facets.h \
+  /usr/include/c++/12/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h \
+  /usr/include/c++/12/bits/streambuf_iterator.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h \
+  /usr/include/c++/12/bits/locale_facets.tcc \
+  /usr/include/c++/12/bits/basic_ios.tcc \
+  /usr/include/c++/12/bits/ostream.tcc \
+  /usr/include/c++/12/istream \
+  /usr/include/c++/12/bits/istream.tcc
 
 CMakeFiles/VulkanTest.dir/src/models/lve_model.cpp.o: ../src/models/lve_model.cpp \
   /usr/include/stdc-predef.h \
@@ -1579,60 +1542,6 @@ CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o: ../src/pipeline/lve_p
   /usr/include/c++/12/bits/stl_vector.h \
   /usr/include/c++/12/bits/stl_bvector.h \
   /usr/include/c++/12/bits/vector.tcc \
-  /usr/include/c++/12/iostream \
-  /usr/include/c++/12/ostream \
-  /usr/include/c++/12/ios \
-  /usr/include/c++/12/exception \
-  /usr/include/c++/12/bits/exception_ptr.h \
-  /usr/include/c++/12/bits/cxxabi_init_exception.h \
-  /usr/include/c++/12/typeinfo \
-  /usr/include/c++/12/bits/nested_exception.h \
-  /usr/include/c++/12/bits/ios_base.h \
-  /usr/include/c++/12/ext/atomicity.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/gthr-default.h \
-  /usr/include/pthread.h \
-  /usr/include/sched.h \
-  /usr/include/x86_64-linux-gnu/bits/sched.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
-  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
-  /usr/include/time.h \
-  /usr/include/x86_64-linux-gnu/bits/time.h \
-  /usr/include/x86_64-linux-gnu/bits/timex.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
-  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/atomic_word.h \
-  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
-  /usr/include/c++/12/bits/locale_classes.h \
-  /usr/include/c++/12/bits/locale_classes.tcc \
-  /usr/include/c++/12/system_error \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h \
-  /usr/include/c++/12/stdexcept \
-  /usr/include/c++/12/streambuf \
-  /usr/include/c++/12/bits/streambuf.tcc \
-  /usr/include/c++/12/bits/basic_ios.h \
-  /usr/include/c++/12/bits/locale_facets.h \
-  /usr/include/c++/12/cwctype \
-  /usr/include/wctype.h \
-  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h \
-  /usr/include/c++/12/bits/streambuf_iterator.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h \
-  /usr/include/c++/12/bits/locale_facets.tcc \
-  /usr/include/c++/12/bits/basic_ios.tcc \
-  /usr/include/c++/12/bits/ostream.tcc \
-  /usr/include/c++/12/istream \
-  /usr/include/c++/12/bits/istream.tcc \
-  /usr/include/c++/12/cassert \
-  /usr/include/assert.h \
-  /usr/include/c++/12/fstream \
-  /usr/include/c++/12/bits/codecvt.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h \
-  /usr/include/c++/12/bits/fstream.tcc \
   ../src/models/lve_model.hpp \
   /usr/include/glm/glm.hpp \
   /usr/include/glm/detail/_fixes.hpp \
@@ -1662,6 +1571,8 @@ CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o: ../src/pipeline/lve_p
   /usr/include/c++/12/tr1/poly_laguerre.tcc \
   /usr/include/c++/12/tr1/riemann_zeta.tcc \
   /usr/include/glm/detail/setup.hpp \
+  /usr/include/c++/12/cassert \
+  /usr/include/assert.h \
   /usr/include/c++/12/cstddef \
   /usr/include/glm/simd/platform.h \
   /usr/include/c++/12/climits \
@@ -1671,6 +1582,7 @@ CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o: ../src/pipeline/lve_p
   /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
   /usr/include/x86_64-linux-gnu/bits/local_lim.h \
   /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
   /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
@@ -1806,7 +1718,58 @@ CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o: ../src/pipeline/lve_p
   /usr/include/glm/detail/type_half.hpp \
   /usr/include/glm/detail/type_half.inl \
   /usr/include/glm/integer.hpp \
-  /usr/include/glm/detail/func_integer.inl
+  /usr/include/glm/detail/func_integer.inl \
+  /usr/include/c++/12/fstream \
+  /usr/include/c++/12/istream \
+  /usr/include/c++/12/ios \
+  /usr/include/c++/12/exception \
+  /usr/include/c++/12/bits/exception_ptr.h \
+  /usr/include/c++/12/bits/cxxabi_init_exception.h \
+  /usr/include/c++/12/typeinfo \
+  /usr/include/c++/12/bits/nested_exception.h \
+  /usr/include/c++/12/bits/ios_base.h \
+  /usr/include/c++/12/ext/atomicity.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/gthr-default.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
+  /usr/include/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/timex.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/c++/12/bits/locale_classes.h \
+  /usr/include/c++/12/bits/locale_classes.tcc \
+  /usr/include/c++/12/system_error \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h \
+  /usr/include/c++/12/stdexcept \
+  /usr/include/c++/12/streambuf \
+  /usr/include/c++/12/bits/streambuf.tcc \
+  /usr/include/c++/12/bits/basic_ios.h \
+  /usr/include/c++/12/bits/locale_facets.h \
+  /usr/include/c++/12/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h \
+  /usr/include/c++/12/bits/streambuf_iterator.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h \
+  /usr/include/c++/12/bits/locale_facets.tcc \
+  /usr/include/c++/12/bits/basic_ios.tcc \
+  /usr/include/c++/12/ostream \
+  /usr/include/c++/12/bits/ostream.tcc \
+  /usr/include/c++/12/bits/istream.tcc \
+  /usr/include/c++/12/bits/codecvt.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h \
+  /usr/include/c++/12/bits/fstream.tcc \
+  /usr/include/c++/12/iostream
 
 CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o: ../src/swap_chain/lve_swap_chain.cpp \
   /usr/include/stdc-predef.h \
@@ -1972,20 +1935,19 @@ CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o: ../src/swap_chain
   /usr/include/c++/12/bits/stl_vector.h \
   /usr/include/c++/12/bits/stl_bvector.h \
   /usr/include/c++/12/bits/vector.tcc \
-  /usr/include/c++/12/array \
-  /usr/include/c++/12/compare \
-  /usr/include/c++/12/cstring \
-  /usr/include/string.h \
-  /usr/include/strings.h \
-  /usr/include/c++/12/iostream \
-  /usr/include/c++/12/ostream \
-  /usr/include/c++/12/ios \
-  /usr/include/c++/12/exception \
-  /usr/include/c++/12/bits/exception_ptr.h \
-  /usr/include/c++/12/bits/cxxabi_init_exception.h \
+  /usr/include/c++/12/memory \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/12/bits/align.h \
+  /usr/include/c++/12/bit \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/unique_ptr.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/shared_ptr.h \
+  /usr/include/c++/12/bits/shared_ptr_base.h \
   /usr/include/c++/12/typeinfo \
-  /usr/include/c++/12/bits/nested_exception.h \
-  /usr/include/c++/12/bits/ios_base.h \
+  /usr/include/c++/12/bits/allocated_ptr.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
   /usr/include/c++/12/ext/atomicity.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/gthr-default.h \
@@ -2004,6 +1966,26 @@ CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o: ../src/swap_chain
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/atomic_word.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/c++/12/ext/concurrence.h \
+  /usr/include/c++/12/exception \
+  /usr/include/c++/12/bits/exception_ptr.h \
+  /usr/include/c++/12/bits/cxxabi_init_exception.h \
+  /usr/include/c++/12/bits/nested_exception.h \
+  /usr/include/c++/12/bits/shared_ptr_atomic.h \
+  /usr/include/c++/12/bits/atomic_base.h \
+  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/12/backward/auto_ptr.h \
+  /usr/include/c++/12/pstl/glue_memory_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h \
+  /usr/include/c++/12/array \
+  /usr/include/c++/12/compare \
+  /usr/include/c++/12/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/c++/12/iostream \
+  /usr/include/c++/12/ostream \
+  /usr/include/c++/12/ios \
+  /usr/include/c++/12/bits/ios_base.h \
   /usr/include/c++/12/bits/locale_classes.h \
   /usr/include/c++/12/bits/locale_classes.tcc \
   /usr/include/c++/12/system_error \
@@ -2024,7 +2006,13 @@ CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o: ../src/swap_chain
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
-  /usr/include/c++/12/limits
+  /usr/include/c++/12/limits \
+  /usr/include/c++/12/set \
+  /usr/include/c++/12/bits/stl_tree.h \
+  /usr/include/c++/12/bits/node_handle.h \
+  /usr/include/c++/12/bits/stl_set.h \
+  /usr/include/c++/12/bits/stl_multiset.h \
+  /usr/include/c++/12/bits/erase_if.h
 
 CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.cpp \
   /usr/include/stdc-predef.h \
@@ -2211,49 +2199,41 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/c++/12/bits/stl_tree.h:
 
+/usr/include/c++/12/istream:
+
+/usr/include/c++/12/bits/ostream.tcc:
+
+/usr/include/c++/12/bits/locale_facets.tcc:
+
+/usr/include/c++/12/bits/streambuf_iterator.h:
+
+/usr/include/c++/12/bits/streambuf.tcc:
+
+/usr/include/c++/12/system_error:
+
+../src/models/lve_model.cpp:
+
+/usr/include/c++/12/bits/locale_classes.h:
+
+/usr/include/c++/12/set:
+
+/usr/include/c++/12/bits/ios_base.h:
+
+/usr/include/c++/12/ios:
+
 /usr/include/string.h:
 
 ../src/device/lve_device.cpp:
 
-/usr/include/c++/12/bits/fs_ops.h:
+/usr/include/c++/12/bits/stl_relops.h:
 
-/usr/include/c++/12/bits/fs_dir.h:
+/usr/include/c++/12/utility:
 
-/usr/include/c++/12/bits/quoted_string.h:
+/usr/include/c++/12/stdexcept:
 
-/usr/include/c++/12/bits/locale_facets_nonio.tcc:
+/usr/include/glm/ext/scalar_constants.inl:
 
-/usr/include/c++/12/bits/sstream.tcc:
-
-/usr/include/libintl.h:
-
-/usr/include/x86_64-linux-gnu/c++/12/bits/time_members.h:
-
-/usr/include/c++/12/locale:
-
-/usr/include/c++/12/bits/parse_numbers.h:
-
-/usr/include/c++/12/ctime:
-
-/usr/include/c++/12/filesystem:
-
-/usr/include/c++/12/pstl/execution_defs.h:
-
-/usr/include/c++/12/pstl/glue_memory_defs.h:
-
-/usr/include/c++/12/backward/auto_ptr.h:
-
-/usr/include/c++/12/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/12/ext/concurrence.h:
-
-/usr/include/c++/12/bits/shared_ptr_base.h:
-
-/usr/include/c++/12/bits/uses_allocator.h:
-
-/usr/include/c++/12/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/12/bits/stl_tempbuf.h:
+/usr/include/glm/gtc/constants.hpp:
 
 /usr/include/glm/integer.hpp:
 
@@ -2262,6 +2242,10 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 /usr/include/glm/detail/type_half.hpp:
 
 /usr/include/glm/packing.hpp:
+
+/usr/include/c++/12/bits/basic_ios.h:
+
+/usr/include/glm/detail/func_trigonometric.inl:
 
 /usr/include/glm/trigonometric.hpp:
 
@@ -2274,8 +2258,6 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 /usr/include/glm/detail/compute_common.hpp:
 
 /usr/include/glm/detail/func_common.inl:
-
-/usr/include/c++/12/codecvt:
 
 /usr/include/glm/detail/func_vector_relational.inl:
 
@@ -2293,11 +2275,11 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/glm/detail/type_mat4x4.hpp:
 
+/usr/include/c++/12/bits/locale_classes.tcc:
+
+/usr/include/glm/mat4x4.hpp:
+
 /usr/include/glm/ext/matrix_float4x3_precision.hpp:
-
-/usr/include/c++/12/bits/shared_ptr.h:
-
-/usr/include/glm/ext/matrix_float4x3.hpp:
 
 /usr/include/glm/ext/matrix_float4x2.hpp:
 
@@ -2349,10 +2331,6 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/glm/ext/matrix_double2x4.hpp:
 
-/usr/include/c++/12/bits/shared_ptr_atomic.h:
-
-/usr/include/glm/ext/matrix_float2x3.hpp:
-
 /usr/include/glm/ext/matrix_double2x3.hpp:
 
 /usr/include/glm/mat2x3.hpp:
@@ -2366,6 +2344,10 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 /usr/include/glm/detail/type_mat3x3.inl:
 
 /usr/include/glm/ext/vector_uint4_sized.hpp:
+
+/usr/include/c++/12/ostream:
+
+/usr/include/glm/ext/vector_uint4.hpp:
 
 /usr/include/glm/ext/vector_int4.hpp:
 
@@ -2411,27 +2393,11 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/glm/ext/vector_float2.hpp:
 
-../src/swap_chain/lve_swap_chain.cpp:
-
-/usr/include/glm/ext/vector_bool2_precision.hpp:
-
-/usr/include/glm/detail/compute_vector_relational.hpp:
-
-/usr/include/glm/detail/type_mat2x3.inl:
-
-/usr/include/glm/detail/type_vec2.hpp:
-
-/usr/include/glm/ext/vector_bool2.hpp:
-
 /usr/include/glm/ext/vector_bool4_precision.hpp:
 
 /usr/include/alloca.h:
 
-/usr/include/c++/12/bit:
-
-/usr/include/glm/ext/matrix_double4x4.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+/usr/include/glm/ext/vector_bool2.hpp:
 
 /usr/include/c++/12/string:
 
@@ -2445,6 +2411,8 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
+/usr/include/c++/12/ext/concurrence.h:
+
 /usr/include/glm/detail/type_mat4x3.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
@@ -2457,15 +2425,11 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/glm/glm.hpp:
 
-/usr/include/c++/12/ext/aligned_buffer.h:
+/usr/include/c++/12/bits/locale_facets.h:
 
-/usr/include/features-time64.h:
+/usr/include/c++/12/string_view:
 
 /usr/include/c++/12/cctype:
-
-/usr/include/c++/12/stdexcept:
-
-/usr/include/c++/12/istream:
 
 /usr/include/c++/12/bits/basic_string.h:
 
@@ -2485,6 +2449,8 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/c++/12/bits/stl_construct.h:
 
+/usr/include/c++/12/pstl/glue_memory_defs.h:
+
 /usr/include/c++/12/bits/refwrap.h:
 
 /usr/include/c++/12/pstl/pstl_config.h:
@@ -2492,8 +2458,6 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 /usr/include/c++/12/bits/stl_function.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/c++/12/bits/fs_path.h:
 
 /usr/include/glm/detail/type_vec4.hpp:
 
@@ -2513,6 +2477,8 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/c++/12/bits/std_abs.h:
 
+/usr/include/c++/12/bits/uses_allocator.h:
+
 /usr/include/c++/12/bits/stl_iterator_base_types.h:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
@@ -2524,6 +2490,8 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/glm/gtc/constants.inl:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
@@ -2545,13 +2513,7 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
-/usr/include/c++/12/bits/locale_facets_nonio.h:
-
 /usr/include/c++/12/bits/exception.h:
-
-/usr/include/glm/mat4x4.hpp:
-
-/usr/include/c++/12/bits/locale_classes.tcc:
 
 /usr/include/glm/detail/type_mat2x4.inl:
 
@@ -2585,9 +2547,25 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
+/usr/include/c++/12/bits/atomic_lockfree_defines.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
+/usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h:
+
+/usr/include/x86_64-linux-gnu/c++/12/bits/atomic_word.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
 /usr/include/vk_video/vulkan_video_codec_av1std_decode.h:
+
+/usr/include/c++/12/streambuf:
+
+/usr/include/glm/matrix.hpp:
+
+/usr/include/glm/ext/vector_bool3.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 ../src/app/lve_app.hpp:
 
@@ -2607,11 +2585,7 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
 
-/usr/include/c++/12/bits/chrono.h:
-
 /usr/include/c++/12/clocale:
-
-/usr/include/c++/12/ratio:
 
 /usr/include/glm/detail/type_mat4x2.inl:
 
@@ -2620,8 +2594,6 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h:
 
 /usr/include/c++/12/tr1/exp_integral.tcc:
-
-/usr/include/c++/12/iomanip:
 
 /usr/include/glm/ext/matrix_float2x3_precision.hpp:
 
@@ -2693,8 +2665,6 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/c++/12/cmath:
 
-/usr/include/x86_64-linux-gnu/c++/12/bits/messages_members.h:
-
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/c++/12/bits/codecvt.h:
@@ -2721,15 +2691,15 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/c++/12/initializer_list:
 
-/usr/include/glm/detail/type_vec2.inl:
+/usr/include/glm/ext/matrix_float4x3.hpp:
+
+/usr/include/c++/12/bits/shared_ptr.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
+/usr/include/glm/detail/type_vec2.inl:
+
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/c++/12/tuple:
-
-/usr/include/c++/12/bits/functional_hash.h:
 
 ../src/pipeline/lve_pipeline.cpp:
 
@@ -2748,6 +2718,8 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 /usr/include/stdint.h:
 
 /usr/include/linux/limits.h:
+
+/usr/include/glm/ext/scalar_constants.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
@@ -2785,12 +2757,6 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/wchar.h:
 
-/usr/include/x86_64-linux-gnu/c++/12/bits/atomic_word.h:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h:
-
 /usr/include/c++/12/cstdint:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
@@ -2803,15 +2769,11 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/c++/12/ext/alloc_traits.h:
 
+/usr/include/glm/detail/compute_vector_relational.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/vk_video/vulkan_video_codec_h264std.h:
-
-/usr/include/c++/12/unordered_set:
-
-/usr/include/c++/12/bits/align.h:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h:
 
@@ -2863,10 +2825,6 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/c++/12/bits/basic_string.tcc:
 
-/usr/include/c++/12/bits/unique_ptr.h:
-
-/usr/include/vulkan/vulkan_core.h:
-
 /usr/include/vk_video/vulkan_video_codecs_common.h:
 
 /usr/include/c++/12/exception:
@@ -2877,19 +2835,15 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/vk_video/vulkan_video_codec_h264std_encode.h:
 
-/usr/include/c++/12/system_error:
-
 /usr/include/glm/geometric.hpp:
 
 /usr/include/vk_video/vulkan_video_codec_h265std.h:
 
+/usr/include/features-time64.h:
+
+/usr/include/c++/12/ext/aligned_buffer.h:
+
 /usr/include/vk_video/vulkan_video_codec_av1std.h:
-
-/usr/include/c++/12/memory:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
@@ -2907,41 +2861,47 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/c++/12/vector:
 
-/usr/include/c++/12/bits/streambuf_iterator.h:
-
-/usr/include/c++/12/bits/locale_conv.h:
-
 /usr/include/c++/12/bits/stl_uninitialized.h:
 
 /usr/include/glm/ext/vector_float3_precision.hpp:
 
 /usr/include/c++/12/bits/stl_bvector.h:
 
-/usr/include/glm/detail/func_exponential.inl:
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
-/usr/include/wctype.h:
+../src/swap_chain/lve_swap_chain.hpp:
 
-/usr/include/sched.h:
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
-/usr/include/glm/ext/vector_uint4.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
-/usr/include/c++/12/ostream:
+/usr/include/c++/12/memory:
 
-/usr/include/c++/12/tr1/special_function_util.h:
+/usr/include/c++/12/bits/stl_tempbuf.h:
 
-/usr/include/c++/12/ios:
+/usr/include/c++/12/bits/stl_raw_storage_iter.h:
 
-/usr/include/c++/12/bits/exception_ptr.h:
+/usr/include/c++/12/unordered_set:
 
-/usr/include/c++/12/bits/cxxabi_init_exception.h:
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-/usr/include/c++/12/bits/allocated_ptr.h:
+/usr/include/c++/12/bits/align.h:
 
-/usr/include/c++/12/bits/nested_exception.h:
+/usr/include/glm/ext/matrix_double4x4.hpp:
 
-/usr/include/c++/12/set:
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
-/usr/include/c++/12/bits/ios_base.h:
+/usr/include/c++/12/bit:
+
+/usr/include/vulkan/vulkan_core.h:
+
+/usr/include/c++/12/bits/unique_ptr.h:
+
+/usr/include/c++/12/bits/functional_hash.h:
+
+/usr/include/c++/12/tuple:
+
+/usr/include/c++/12/bits/shared_ptr_base.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h:
 
@@ -2961,11 +2921,17 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/syslimits.h:
 
+/usr/include/wctype.h:
+
+/usr/include/glm/detail/func_exponential.inl:
+
+/usr/include/sched.h:
+
+/usr/include/c++/12/backward/auto_ptr.h:
+
 /usr/include/glm/ext/vector_uint2_sized.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
-
-/usr/include/c++/12/bits/locale_facets.tcc:
 
 /usr/include/c++/12/bits/istream.tcc:
 
@@ -2973,65 +2939,49 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
+../src/game_object/lve_game_object.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
 /usr/include/c++/12/cassert:
 
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
 /usr/include/c++/12/iostream:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
-../src/models/lve_model.cpp:
+/usr/include/c++/12/bits/exception_ptr.h:
 
-/usr/include/c++/12/bits/locale_classes.h:
+/usr/include/c++/12/bits/cxxabi_init_exception.h:
 
-/usr/include/glm/matrix.hpp:
+/usr/include/c++/12/bits/allocated_ptr.h:
 
-/usr/include/glm/ext/vector_bool3.hpp:
+/usr/include/c++/12/bits/nested_exception.h:
 
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+/usr/include/glm/ext/matrix_float2x3.hpp:
 
-/usr/include/c++/12/streambuf:
+/usr/include/c++/12/bits/shared_ptr_atomic.h:
 
-/usr/include/c++/12/bits/streambuf.tcc:
-
-/usr/include/c++/12/sstream:
-
-/usr/include/glm/detail/func_trigonometric.inl:
-
-/usr/include/c++/12/bits/basic_ios.h:
-
-/usr/include/c++/12/string_view:
-
-/usr/include/c++/12/bits/locale_facets.h:
-
-/usr/include/c++/12/bits/ostream.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
-
-../src/swap_chain/lve_swap_chain.hpp:
-
-/usr/include/c++/12/bits/atomic_base.h:
+/usr/include/c++/12/pstl/execution_defs.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h:
 
+/usr/include/c++/12/bits/atomic_base.h:
+
 ../src/models/lve_model.hpp:
 
-/usr/include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h:
-
 /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h:
+
+/usr/include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/12/bits/fs_fwd.h:
 
 /usr/include/GLFW/glfw3.h:
 
@@ -3045,6 +2995,10 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
+/usr/include/glm/detail/type_mat2x3.inl:
+
+/usr/include/glm/detail/type_vec2.hpp:
+
 /usr/include/glm/ext/matrix_float3x4.hpp:
 
 /usr/include/c++/12/bits/specfun.h:
@@ -3052,6 +3006,8 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 /usr/include/c++/12/limits:
 
 /usr/include/c++/12/tr1/gamma.tcc:
+
+/usr/include/c++/12/tr1/special_function_util.h:
 
 /usr/include/glm/ext/matrix_double2x2.hpp:
 
@@ -3090,3 +3046,7 @@ CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.
 /usr/include/c++/12/climits:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+../src/swap_chain/lve_swap_chain.cpp:
+
+/usr/include/glm/ext/vector_bool2_precision.hpp:

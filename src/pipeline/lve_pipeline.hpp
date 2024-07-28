@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../device/lve_device.hpp"
-#include <iostream>
 #include <vector>
 #include <vulkan/vulkan_core.h>
 
@@ -9,14 +8,17 @@
 namespace lve {
 
 struct PipelineConfigInfo {
-  VkViewport viewport;
-  VkRect2D scissor;
+  VkPipelineViewportStateCreateInfo viewportInfo;
   VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
   VkPipelineRasterizationStateCreateInfo rasterizationInfo;
   VkPipelineMultisampleStateCreateInfo multisampleInfo;
   VkPipelineColorBlendAttachmentState colorBlendAttachment;
   VkPipelineColorBlendStateCreateInfo colorBlendInfo;
   VkPipelineDepthStencilStateCreateInfo depthStencilInfo;
+
+  std::vector<VkDynamicState> dynamicStateEnables;
+  VkPipelineDynamicStateCreateInfo dynamicStateInfo;
+
   VkPipelineLayout pipelineLayout = nullptr;
   VkRenderPass renderPass = nullptr;
   uint32_t subpass = 0;
@@ -25,15 +27,11 @@ struct PipelineConfigInfo {
 class LvePipeline {
 public:
   LvePipeline(LveDevice &device, const std::string &vertFilepath,
-              const std::string &fragFilepath, const PipelineConfigInfo config);
+              const std::string &fragFilepath, const PipelineConfigInfo& configInfo);
 
-  ~LvePipeline(); 
+  ~LvePipeline();
 
-  LvePipeline(const LvePipeline &) = delete;
-  LvePipeline& operator=(const LvePipeline &) = delete;
-
-  static PipelineConfigInfo defaultPipelineConfigInfo(uint32_t width,
-                                                      uint32_t height);
+  static void defaultPipelineConfigInfo(PipelineConfigInfo& configInfo);
 
   void bind(VkCommandBuffer commandBuffer);
 

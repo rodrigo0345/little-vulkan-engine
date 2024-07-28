@@ -24,7 +24,7 @@ public:
   ~LveWindow();
 
   bool wasWindowResized(){return frameBufferResize;}
-  void resetWindowResizedFlat() { this->frameBufferResize = false; }
+  void resetWindowResizedFlag() { this->frameBufferResize = false; }
 
   // disallow copying the class
   // we do not want 2 pointers pointing to the window
