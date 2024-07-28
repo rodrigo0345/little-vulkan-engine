@@ -1,9 +1,9 @@
-CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o: \
- /home/rodrigo0345/Work/vulkan-learning/src/pipeline/lve_pipeline.cpp \
+CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o: \
+ /home/rodrigo0345/Work/vulkan-learning/src/swap_chain/lve_swap_chain.cpp \
  /usr/include/stdc-predef.h \
- /home/rodrigo0345/Work/vulkan-learning/src/pipeline/lve_pipeline.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/pipeline/../device/lve_device.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/pipeline/../device/../window/lve_window.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/swap_chain/lve_swap_chain.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/swap_chain/../device/lve_device.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/swap_chain/../device/../window/lve_window.hpp \
  /usr/include/c++/12/cstdint \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -135,9 +135,12 @@ CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o: \
  /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
- /usr/include/c++/12/bits/vector.tcc /usr/include/c++/12/iostream \
- /usr/include/c++/12/ostream /usr/include/c++/12/ios \
- /usr/include/c++/12/exception /usr/include/c++/12/bits/exception_ptr.h \
+ /usr/include/c++/12/bits/vector.tcc /usr/include/c++/12/array \
+ /usr/include/c++/12/compare /usr/include/c++/12/cstring \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/12/iostream /usr/include/c++/12/ostream \
+ /usr/include/c++/12/ios /usr/include/c++/12/exception \
+ /usr/include/c++/12/bits/exception_ptr.h \
  /usr/include/c++/12/bits/cxxabi_init_exception.h \
  /usr/include/c++/12/typeinfo /usr/include/c++/12/bits/nested_exception.h \
  /usr/include/c++/12/bits/ios_base.h /usr/include/c++/12/ext/atomicity.h \
@@ -171,9 +174,4 @@ CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o: \
  /usr/include/c++/12/bits/locale_facets.tcc \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
- /usr/include/c++/12/bits/istream.tcc /usr/include/c++/12/cassert \
- /usr/include/assert.h /usr/include/c++/12/fstream \
- /usr/include/c++/12/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h \
- /usr/include/c++/12/bits/fstream.tcc
+ /usr/include/c++/12/bits/istream.tcc /usr/include/c++/12/limits

@@ -1,10 +1,11 @@
 #include "lve_window.hpp"
 #include <GLFW/glfw3.h>
+#include <cstdint>
 #include <stdexcept>
 #include <vulkan/vulkan_core.h>
 
 namespace lve {
-LveWindow::LveWindow(int w, int h, std::string name)
+LveWindow::LveWindow(uint32_t w, uint32_t h, std::string name)
     : width(w), height(h), windowName(name) {
   initWindow();
 }

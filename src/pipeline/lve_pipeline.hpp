@@ -6,8 +6,19 @@
 #include <vulkan/vulkan_core.h>
 
 namespace lve {
+
 struct PipelineConfigInfo {
+  VkViewport viewport;
+  VkRect2D scissor;
   VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
+  VkPipelineRasterizationStateCreateInfo rasterizationInfo;
+  VkPipelineMultisampleStateCreateInfo multisampleInfo;
+  VkPipelineColorBlendAttachmentState colorBlendAttachment;
+  VkPipelineColorBlendStateCreateInfo colorBlendInfo;
+  VkPipelineDepthStencilStateCreateInfo depthStencilInfo;
+  VkPipelineLayout pipelineLayout = nullptr;
+  VkRenderPass renderPass = nullptr;
+  uint32_t subpass = 0;
 };
 
 class LvePipeline {
@@ -15,7 +26,7 @@ public:
   LvePipeline(LveDevice &device, const std::string &vertFilepath,
               const std::string &fragFilepath, const PipelineConfigInfo config);
 
-  ~LvePipeline() {}
+  ~LvePipeline(); 
 
   LvePipeline(const LvePipeline &) = delete;
   void operator=(const LvePipeline &) = delete;

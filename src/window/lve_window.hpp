@@ -1,6 +1,7 @@
 #pragma once
 
 // this helps at telling glfw that we will be using vulkan
+#include <cstdint>
 #include <string>
 #include <vulkan/vulkan_core.h>
 #define GLFW_INCLUDE_VULKAN
@@ -11,14 +12,12 @@ class LveWindow {
 private:
   GLFWwindow *window;
 
-  const int width;
-  const int height;
+  const uint32_t width;
+  const uint32_t height;
   const std::string windowName;
 
-  void initWindow();
-
 public:
-  LveWindow(int w, int h, std::string name);
+  LveWindow(uint32_t w, uint32_t h, std::string name);
   ~LveWindow();
 
   // disallow copying the class
@@ -26,7 +25,13 @@ public:
   LveWindow(const LveWindow &) = delete;
   LveWindow &operator=(const LveWindow &);
 
+  VkExtent2D getExtent() { return {this->width, this->height};}
+
   bool shouldClose();
   void createWindowSurface(VkInstance instance, VkSurfaceKHR *surface);
+
+private:
+  void initWindow();
+
 };
 } // namespace lve

@@ -225,6 +225,30 @@ src/pipeline/lve_pipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.s
 .PHONY : src/pipeline/lve_pipeline.cpp.s
 
+src/swap_chain/lve_swap_chain.o: src/swap_chain/lve_swap_chain.cpp.o
+.PHONY : src/swap_chain/lve_swap_chain.o
+
+# target to build an object file
+src/swap_chain/lve_swap_chain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o
+.PHONY : src/swap_chain/lve_swap_chain.cpp.o
+
+src/swap_chain/lve_swap_chain.i: src/swap_chain/lve_swap_chain.cpp.i
+.PHONY : src/swap_chain/lve_swap_chain.i
+
+# target to preprocess a source file
+src/swap_chain/lve_swap_chain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.i
+.PHONY : src/swap_chain/lve_swap_chain.cpp.i
+
+src/swap_chain/lve_swap_chain.s: src/swap_chain/lve_swap_chain.cpp.s
+.PHONY : src/swap_chain/lve_swap_chain.s
+
+# target to generate assembly for a file
+src/swap_chain/lve_swap_chain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.s
+.PHONY : src/swap_chain/lve_swap_chain.cpp.s
+
 src/window/lve_window.o: src/window/lve_window.cpp.o
 .PHONY : src/window/lve_window.o
 
@@ -270,6 +294,9 @@ help:
 	@echo "... src/pipeline/lve_pipeline.o"
 	@echo "... src/pipeline/lve_pipeline.i"
 	@echo "... src/pipeline/lve_pipeline.s"
+	@echo "... src/swap_chain/lve_swap_chain.o"
+	@echo "... src/swap_chain/lve_swap_chain.i"
+	@echo "... src/swap_chain/lve_swap_chain.s"
 	@echo "... src/window/lve_window.o"
 	@echo "... src/window/lve_window.i"
 	@echo "... src/window/lve_window.s"
