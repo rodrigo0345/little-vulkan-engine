@@ -37,6 +37,7 @@ std::vector<char> LvePipeline::readFile(const std::string &filepath) {
   std::vector<char> buffer(fileSize);
 
   file.seekg(0);
+
   file.read(buffer.data(), fileSize);
 
   file.close();
@@ -114,13 +115,6 @@ void LvePipeline::createGraphicsPipeline(const std::string &vertFilepath,
   ;
   auto vertCode = readFile(vertFilepath);
   auto fragCode = readFile(fragFilepath);
-
-  std::cout << "Code length: " << vertCode.size() << std::endl;
-  std::cout << "Code: " << vertCode.data() << std::endl;
-  for (char i: vertCode)
-    std::cout << i << ' ';
-
-  std::cout << std::endl;
 
   createShaderModule(vertCode, &this->vertShaderModule);
   createShaderModule(fragCode, &this->fragShaderModule);
