@@ -6,15 +6,18 @@
 #include <filesystem>
 #include <memory>
 #include <stdexcept>
+#include <vector>
 #include <vulkan/vulkan_core.h>
 
 namespace lve {
 
 FirstApp::FirstApp() {
+  loadModels();
   createPipelineLayout();
   createPipeline();
   createCommandBuffers();
 }
+
 FirstApp::~FirstApp() {
   vkDestroyPipelineLayout(lveDevice.device(), this->pipelineLayout, nullptr);
 }
@@ -25,6 +28,9 @@ void FirstApp::run() {
     glfwPollEvents();
     this->drawFrame();
   }
+
+  // espera que a gpu acabe tudo e só depois acaba o programa
+  vkDeviceWaitIdle(lveDevice.device());
 }
 
 void FirstApp::createPipelineLayout() {
@@ -57,6 +63,7 @@ void FirstApp::createPipeline() {
       lveDevice, "./shaders/build/simple_shader_vert.spv",
       "./shaders/build/simple_shader_frag.spv", pipelineConfig);
 }
+
 void FirstApp::createCommandBuffers() {
   commandBuffers.resize(lveSwapChain.imageCount());
 
@@ -76,7 +83,8 @@ void FirstApp::createCommandBuffers() {
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
 
     if (vkBeginCommandBuffer(commandBuffers[i], &beginInfo) != VK_SUCCESS) {
-      throw std::runtime_error("ERROR: Failed to start begin info command buffer");
+      throw std::runtime_error(
+          "ERROR: Failed to start begin info command buffer");
     }
 
     VkRenderPassBeginInfo renderPassInfo{};
@@ -94,16 +102,17 @@ void FirstApp::createCommandBuffers() {
     renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());
     renderPassInfo.pClearValues = clearValues.data();
 
-    vkCmdBeginRenderPass(commandBuffers[i], &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
+    vkCmdBeginRenderPass(commandBuffers[i], &renderPassInfo,
+                         VK_SUBPASS_CONTENTS_INLINE);
 
     lvePipeline->bind(commandBuffers[i]);
 
-    // draw 3 vertices numa so instancia, 0, 0 porque não há offsets
-    vkCmdDraw(commandBuffers[i], 3, 1, 0, 0);
+    lveModel->bind(commandBuffers[i]);
+    lveModel->draw(commandBuffers[i]);
 
     vkCmdEndRenderPass(commandBuffers[i]);
 
-    if(vkEndCommandBuffer(commandBuffers[i]) != VK_SUCCESS){
+    if (vkEndCommandBuffer(commandBuffers[i]) != VK_SUCCESS) {
       throw std::runtime_error("ERROR: Failed to record command buffer");
     }
   }
@@ -113,16 +122,67 @@ void FirstApp::drawFrame() {
 
   auto result = lveSwapChain.acquireNextImage(&imageIndex);
 
-  if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR){
+  if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR) {
     throw std::runtime_error("ERROR: Failed acquire swap chain image");
   }
 
   // trata de enviar os nossos command buffers para a gpu
-  result = lveSwapChain.submitCommandBuffers(&commandBuffers[imageIndex], &imageIndex);
+  result = lveSwapChain.submitCommandBuffers(&commandBuffers[imageIndex],
+                                             &imageIndex);
 
-  if(result != VK_SUCCESS){
+  if (result != VK_SUCCESS) {
     throw std::runtime_error("ERROR: Failed acquire swap chain image");
   }
+}
+
+std::vector<LveModel::Vertex>
+sierpinskiTriangles(std::vector<LveModel::Vertex> parentTriangle,
+                    int currCount = 0, int limit = 4) {
+  if (currCount == limit) {
+    return parentTriangle;
+  }
+
+  // Calculate the midpoints of each edge of the parent triangle
+  LveModel::Vertex midpoint1{
+      {(parentTriangle[0].position.x + parentTriangle[1].position.x) / 2.0f,
+       (parentTriangle[0].position.y + parentTriangle[1].position.y) / 2.0f}};
+
+  LveModel::Vertex midpoint2{
+      {(parentTriangle[1].position.x + parentTriangle[2].position.x) / 2.0f,
+       (parentTriangle[1].position.y + parentTriangle[2].position.y) / 2.0f}};
+
+  LveModel::Vertex midpoint3{
+      {(parentTriangle[2].position.x + parentTriangle[0].position.x) / 2.0f,
+       (parentTriangle[2].position.y + parentTriangle[0].position.y) / 2.0f}};
+
+  // Create the 3 new triangles
+  std::vector<LveModel::Vertex> t1 = {parentTriangle[0], midpoint1, midpoint3};
+  std::vector<LveModel::Vertex> t2 = {parentTriangle[1], midpoint2, midpoint1};
+  std::vector<LveModel::Vertex> t3 = {parentTriangle[2], midpoint3, midpoint2};
+
+  // Recursively divide the new triangles
+  auto res1 = sierpinskiTriangles(t1, currCount + 1, limit);
+  auto res2 = sierpinskiTriangles(t2, currCount + 1, limit);
+  auto res3 = sierpinskiTriangles(t3, currCount + 1, limit);
+
+  // Combine the results
+  std::vector<LveModel::Vertex> result;
+  result.reserve(res1.size() + res2.size() + res3.size());
+  result.insert(result.end(), res1.begin(), res1.end());
+  result.insert(result.end(), res2.begin(), res2.end());
+  result.insert(result.end(), res3.begin(), res3.end());
+
+  return result;
+}
+
+void FirstApp::loadModels() {
+  std::vector<LveModel::Vertex> verticesP{
+      {{0.0f, -0.5f}}, {{0.5f, 0.5f}}, {{-0.5f, 0.5f}}};
+
+  auto vertices = sierpinskiTriangles(verticesP);
+
+  lveModel = std::make_unique<LveModel>(lveDevice, vertices);
+  ;
 }
 
 } // namespace lve

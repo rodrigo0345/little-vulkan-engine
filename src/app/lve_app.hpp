@@ -3,6 +3,7 @@
 #include "../pipeline/lve_pipeline.hpp"
 #include "../window/lve_window.hpp"
 #include "../swap_chain/lve_swap_chain.hpp"
+#include "../models/lve_model.hpp"
 #include <memory>
 #include <vector>
 #include <vulkan/vulkan_core.h>
@@ -22,6 +23,8 @@ public:
   FirstApp &operator=(const FirstApp&) = delete;
 
 private:
+  void loadModels();
+
   LveWindow lveWindow{WIDTH, HEIGHT, "Hello Vulkan"};
 
   LveDevice lveDevice{lveWindow};
@@ -32,6 +35,7 @@ private:
 
   VkPipelineLayout pipelineLayout;
   std::vector<VkCommandBuffer> commandBuffers;
+  std::unique_ptr<LveModel> lveModel;
 
   void createPipelineLayout();
   void createPipeline();

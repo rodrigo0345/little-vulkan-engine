@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VulkanTest.dir/src/device/lve_device.cpp.o.d"
   "CMakeFiles/VulkanTest.dir/src/main.cpp.o"
   "CMakeFiles/VulkanTest.dir/src/main.cpp.o.d"
+  "CMakeFiles/VulkanTest.dir/src/models/lve_model.cpp.o"
+  "CMakeFiles/VulkanTest.dir/src/models/lve_model.cpp.o.d"
   "CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o"
   "CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o.d"
   "CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o"

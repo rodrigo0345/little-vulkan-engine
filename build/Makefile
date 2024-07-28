@@ -201,6 +201,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/models/lve_model.o: src/models/lve_model.cpp.o
+.PHONY : src/models/lve_model.o
+
+# target to build an object file
+src/models/lve_model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/models/lve_model.cpp.o
+.PHONY : src/models/lve_model.cpp.o
+
+src/models/lve_model.i: src/models/lve_model.cpp.i
+.PHONY : src/models/lve_model.i
+
+# target to preprocess a source file
+src/models/lve_model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/models/lve_model.cpp.i
+.PHONY : src/models/lve_model.cpp.i
+
+src/models/lve_model.s: src/models/lve_model.cpp.s
+.PHONY : src/models/lve_model.s
+
+# target to generate assembly for a file
+src/models/lve_model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/models/lve_model.cpp.s
+.PHONY : src/models/lve_model.cpp.s
+
 src/pipeline/lve_pipeline.o: src/pipeline/lve_pipeline.cpp.o
 .PHONY : src/pipeline/lve_pipeline.o
 
@@ -291,6 +315,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/models/lve_model.o"
+	@echo "... src/models/lve_model.i"
+	@echo "... src/models/lve_model.s"
 	@echo "... src/pipeline/lve_pipeline.o"
 	@echo "... src/pipeline/lve_pipeline.i"
 	@echo "... src/pipeline/lve_pipeline.s"
