@@ -197,4 +197,10 @@ void LvePipeline::createShaderModule(const std::vector<char> &code,
     throw std::runtime_error("ERROR: Failed to create shader module");
   }
 }
+
+void LvePipeline::bind(VkCommandBuffer commandBuffer) {
+  // existem outros tipos de pipelines como raytracing e computing
+  vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
+                    graphicsPipeline);
+}
 } // namespace lve

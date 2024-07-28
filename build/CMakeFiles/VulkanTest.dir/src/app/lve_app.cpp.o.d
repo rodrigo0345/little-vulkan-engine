@@ -189,7 +189,8 @@ CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o: \
  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
  /usr/include/c++/12/backward/auto_ptr.h \
  /usr/include/c++/12/pstl/glue_memory_defs.h \
- /usr/include/c++/12/pstl/execution_defs.h /usr/include/c++/12/filesystem \
+ /usr/include/c++/12/pstl/execution_defs.h /usr/include/c++/12/array \
+ /usr/include/c++/12/compare /usr/include/c++/12/filesystem \
  /usr/include/c++/12/bits/fs_fwd.h /usr/include/c++/12/bits/chrono.h \
  /usr/include/c++/12/ratio /usr/include/c++/12/limits \
  /usr/include/c++/12/ctime /usr/include/c++/12/bits/parse_numbers.h \
