@@ -137,7 +137,7 @@ void FirstApp::drawFrame() {
 
 std::vector<LveModel::Vertex>
 sierpinskiTriangles(std::vector<LveModel::Vertex> parentTriangle,
-                    int currCount = 0, int limit = 4) {
+                    int currCount = 0, int limit = 8) {
   if (currCount == limit) {
     return parentTriangle;
   }
@@ -145,15 +145,18 @@ sierpinskiTriangles(std::vector<LveModel::Vertex> parentTriangle,
   // Calculate the midpoints of each edge of the parent triangle
   LveModel::Vertex midpoint1{
       {(parentTriangle[0].position.x + parentTriangle[1].position.x) / 2.0f,
-       (parentTriangle[0].position.y + parentTriangle[1].position.y) / 2.0f}};
+       (parentTriangle[0].position.y + parentTriangle[1].position.y) / 2.0f},
+      parentTriangle[0].color};
 
   LveModel::Vertex midpoint2{
       {(parentTriangle[1].position.x + parentTriangle[2].position.x) / 2.0f,
-       (parentTriangle[1].position.y + parentTriangle[2].position.y) / 2.0f}};
+       (parentTriangle[1].position.y + parentTriangle[2].position.y) / 2.0f},
+      parentTriangle[1].color};
 
   LveModel::Vertex midpoint3{
       {(parentTriangle[2].position.x + parentTriangle[0].position.x) / 2.0f,
-       (parentTriangle[2].position.y + parentTriangle[0].position.y) / 2.0f}};
+       (parentTriangle[2].position.y + parentTriangle[0].position.y) / 2.0f},
+      parentTriangle[2].color};
 
   // Create the 3 new triangles
   std::vector<LveModel::Vertex> t1 = {parentTriangle[0], midpoint1, midpoint3};
@@ -176,10 +179,12 @@ sierpinskiTriangles(std::vector<LveModel::Vertex> parentTriangle,
 }
 
 void FirstApp::loadModels() {
-  std::vector<LveModel::Vertex> verticesP{
-      {{0.0f, -0.5f}}, {{0.5f, 0.5f}}, {{-0.5f, 0.5f}}};
+  std::vector<LveModel::Vertex> verticesP{{{0.0f, -0.5f}, {0.0f, 1.0f, 0.0f}},
+                                          {{0.5f, 0.5f}, {1.0f, 0.0f, 0.0f}},
+                                          {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}};
 
   auto vertices = sierpinskiTriangles(verticesP);
+  // auto vertices = verticesP;
 
   lveModel = std::make_unique<LveModel>(lveDevice, vertices);
   ;
