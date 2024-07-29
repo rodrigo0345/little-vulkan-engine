@@ -249,6 +249,30 @@ src/pipeline/lve_pipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.s
 .PHONY : src/pipeline/lve_pipeline.cpp.s
 
+src/renderer/lve_renderer.o: src/renderer/lve_renderer.cpp.o
+.PHONY : src/renderer/lve_renderer.o
+
+# target to build an object file
+src/renderer/lve_renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o
+.PHONY : src/renderer/lve_renderer.cpp.o
+
+src/renderer/lve_renderer.i: src/renderer/lve_renderer.cpp.i
+.PHONY : src/renderer/lve_renderer.i
+
+# target to preprocess a source file
+src/renderer/lve_renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.i
+.PHONY : src/renderer/lve_renderer.cpp.i
+
+src/renderer/lve_renderer.s: src/renderer/lve_renderer.cpp.s
+.PHONY : src/renderer/lve_renderer.s
+
+# target to generate assembly for a file
+src/renderer/lve_renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.s
+.PHONY : src/renderer/lve_renderer.cpp.s
+
 src/swap_chain/lve_swap_chain.o: src/swap_chain/lve_swap_chain.cpp.o
 .PHONY : src/swap_chain/lve_swap_chain.o
 
@@ -321,6 +345,9 @@ help:
 	@echo "... src/pipeline/lve_pipeline.o"
 	@echo "... src/pipeline/lve_pipeline.i"
 	@echo "... src/pipeline/lve_pipeline.s"
+	@echo "... src/renderer/lve_renderer.o"
+	@echo "... src/renderer/lve_renderer.i"
+	@echo "... src/renderer/lve_renderer.s"
 	@echo "... src/swap_chain/lve_swap_chain.o"
 	@echo "... src/swap_chain/lve_swap_chain.i"
 	@echo "... src/swap_chain/lve_swap_chain.s"
