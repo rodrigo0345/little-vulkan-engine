@@ -139,10 +139,24 @@ CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rodrigo0345/Work/vulkan-learning/src/pipeline/lve_pipeline.cpp -o CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.s
 
+CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o: CMakeFiles/VulkanTest.dir/flags.make
+CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o: ../src/render_systems/simple_render_system.cpp
+CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o: CMakeFiles/VulkanTest.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o -MF CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o.d -o CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o -c /home/rodrigo0345/Work/vulkan-learning/src/render_systems/simple_render_system.cpp
+
+CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rodrigo0345/Work/vulkan-learning/src/render_systems/simple_render_system.cpp > CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.i
+
+CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rodrigo0345/Work/vulkan-learning/src/render_systems/simple_render_system.cpp -o CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.s
+
 CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o: CMakeFiles/VulkanTest.dir/flags.make
 CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o: ../src/renderer/lve_renderer.cpp
 CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o: CMakeFiles/VulkanTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o -MF CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o.d -o CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o -c /home/rodrigo0345/Work/vulkan-learning/src/renderer/lve_renderer.cpp
 
 CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.s: cmake_force
 CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o: CMakeFiles/VulkanTest.dir/flags.make
 CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o: ../src/swap_chain/lve_swap_chain.cpp
 CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o: CMakeFiles/VulkanTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o -MF CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o.d -o CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o -c /home/rodrigo0345/Work/vulkan-learning/src/swap_chain/lve_swap_chain.cpp
 
 CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.s: cmake_force
 CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: CMakeFiles/VulkanTest.dir/flags.make
 CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: ../src/window/lve_window.cpp
 CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o: CMakeFiles/VulkanTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o -MF CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o.d -o CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o -c /home/rodrigo0345/Work/vulkan-learning/src/window/lve_window.cpp
 
 CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.i: cmake_force
@@ -188,6 +202,7 @@ VulkanTest_OBJECTS = \
 "CMakeFiles/VulkanTest.dir/src/main.cpp.o" \
 "CMakeFiles/VulkanTest.dir/src/models/lve_model.cpp.o" \
 "CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o" \
+"CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o" \
 "CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o" \
 "CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o" \
 "CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o"
@@ -200,13 +215,14 @@ VulkanTest: CMakeFiles/VulkanTest.dir/src/device/lve_device.cpp.o
 VulkanTest: CMakeFiles/VulkanTest.dir/src/main.cpp.o
 VulkanTest: CMakeFiles/VulkanTest.dir/src/models/lve_model.cpp.o
 VulkanTest: CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o
+VulkanTest: CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o
 VulkanTest: CMakeFiles/VulkanTest.dir/src/renderer/lve_renderer.cpp.o
 VulkanTest: CMakeFiles/VulkanTest.dir/src/swap_chain/lve_swap_chain.cpp.o
 VulkanTest: CMakeFiles/VulkanTest.dir/src/window/lve_window.cpp.o
 VulkanTest: CMakeFiles/VulkanTest.dir/build.make
 VulkanTest: /usr/lib/x86_64-linux-gnu/libvulkan.so
 VulkanTest: CMakeFiles/VulkanTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable VulkanTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rodrigo0345/Work/vulkan-learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable VulkanTest"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VulkanTest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

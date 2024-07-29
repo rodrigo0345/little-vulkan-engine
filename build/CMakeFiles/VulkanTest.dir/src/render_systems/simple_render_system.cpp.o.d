@@ -1,11 +1,11 @@
-CMakeFiles/VulkanTest.dir/src/main.cpp.o: \
- /home/rodrigo0345/Work/vulkan-learning/src/main.cpp \
+CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o: \
+ /home/rodrigo0345/Work/vulkan-learning/src/render_systems/simple_render_system.cpp \
  /usr/include/stdc-predef.h \
- /home/rodrigo0345/Work/vulkan-learning/src/app/lve_app.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../game_object/lve_game_object.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../game_object/../models/lve_model.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../game_object/../models/../device/lve_device.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../game_object/../models/../device/../window/lve_window.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/render_systems/simple_render_system.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/render_systems/../game_object/lve_game_object.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/render_systems/../game_object/../models/lve_model.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/render_systems/../game_object/../models/../device/lve_device.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/render_systems/../game_object/../models/../device/../window/lve_window.hpp \
  /usr/include/c++/12/cstdint \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -319,23 +319,12 @@ CMakeFiles/VulkanTest.dir/src/main.cpp.o: \
  /usr/include/c++/12/backward/auto_ptr.h \
  /usr/include/c++/12/pstl/glue_memory_defs.h \
  /usr/include/c++/12/pstl/execution_defs.h \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../renderer/lve_renderer.hpp \
- /home/rodrigo0345/Work/vulkan-learning/src/app/../renderer/../swap_chain/lve_swap_chain.hpp \
- /usr/include/c++/12/iostream /usr/include/c++/12/ostream \
- /usr/include/c++/12/ios /usr/include/c++/12/bits/ios_base.h \
- /usr/include/c++/12/bits/locale_classes.h \
- /usr/include/c++/12/bits/locale_classes.tcc \
- /usr/include/c++/12/system_error \
- /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h \
- /usr/include/c++/12/stdexcept /usr/include/c++/12/streambuf \
- /usr/include/c++/12/bits/streambuf.tcc \
- /usr/include/c++/12/bits/basic_ios.h \
- /usr/include/c++/12/bits/locale_facets.h /usr/include/c++/12/cwctype \
- /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
- /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h \
- /usr/include/c++/12/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h \
- /usr/include/c++/12/bits/locale_facets.tcc \
- /usr/include/c++/12/bits/basic_ios.tcc \
- /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
- /usr/include/c++/12/bits/istream.tcc
+ /home/rodrigo0345/Work/vulkan-learning/src/render_systems/../pipeline/lve_pipeline.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/render_systems/../renderer/lve_renderer.hpp \
+ /home/rodrigo0345/Work/vulkan-learning/src/render_systems/../renderer/../swap_chain/lve_swap_chain.hpp \
+ /usr/include/c++/12/array /usr/include/c++/12/compare \
+ /usr/include/glm/gtc/constants.hpp \
+ /usr/include/glm/ext/scalar_constants.hpp \
+ /usr/include/glm/ext/scalar_constants.inl \
+ /usr/include/glm/gtc/constants.inl /usr/include/c++/12/stdexcept \
+ /usr/include/c++/12/utility /usr/include/c++/12/bits/stl_relops.h

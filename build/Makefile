@@ -249,6 +249,30 @@ src/pipeline/lve_pipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.s
 .PHONY : src/pipeline/lve_pipeline.cpp.s
 
+src/render_systems/simple_render_system.o: src/render_systems/simple_render_system.cpp.o
+.PHONY : src/render_systems/simple_render_system.o
+
+# target to build an object file
+src/render_systems/simple_render_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o
+.PHONY : src/render_systems/simple_render_system.cpp.o
+
+src/render_systems/simple_render_system.i: src/render_systems/simple_render_system.cpp.i
+.PHONY : src/render_systems/simple_render_system.i
+
+# target to preprocess a source file
+src/render_systems/simple_render_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.i
+.PHONY : src/render_systems/simple_render_system.cpp.i
+
+src/render_systems/simple_render_system.s: src/render_systems/simple_render_system.cpp.s
+.PHONY : src/render_systems/simple_render_system.s
+
+# target to generate assembly for a file
+src/render_systems/simple_render_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.s
+.PHONY : src/render_systems/simple_render_system.cpp.s
+
 src/renderer/lve_renderer.o: src/renderer/lve_renderer.cpp.o
 .PHONY : src/renderer/lve_renderer.o
 
@@ -345,6 +369,9 @@ help:
 	@echo "... src/pipeline/lve_pipeline.o"
 	@echo "... src/pipeline/lve_pipeline.i"
 	@echo "... src/pipeline/lve_pipeline.s"
+	@echo "... src/render_systems/simple_render_system.o"
+	@echo "... src/render_systems/simple_render_system.i"
+	@echo "... src/render_systems/simple_render_system.s"
 	@echo "... src/renderer/lve_renderer.o"
 	@echo "... src/renderer/lve_renderer.i"
 	@echo "... src/renderer/lve_renderer.s"

@@ -2,7 +2,6 @@
 
 #include "../game_object/lve_game_object.hpp"
 #include "../models/lve_model.hpp"
-#include "../pipeline/lve_pipeline.hpp"
 #include "../renderer/lve_renderer.hpp"
 #include "../swap_chain/lve_swap_chain.hpp"
 #include "../window/lve_window.hpp"
@@ -32,12 +31,6 @@ private:
   LveDevice lveDevice{lveWindow};
   LveRenderer lveRenderer{lveWindow, lveDevice};
 
-  std::unique_ptr<LvePipeline> lvePipeline;
-  VkPipelineLayout pipelineLayout;
   std::vector<LveGameObject> gameObjects;
-
-  void createPipelineLayout();
-  void createPipeline();
-  void renderGameObjects(VkCommandBuffer commandBuffer);
 };
 } // namespace lve
