@@ -9,8 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/rodrigo0345/Work/vulkan-learning/src/app/lve_app.cpp" "CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o" "gcc" "CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.o.d"
+  "/home/rodrigo0345/Work/vulkan-learning/src/camera/lve_camera.cpp" "CMakeFiles/VulkanTest.dir/src/camera/lve_camera.cpp.o" "gcc" "CMakeFiles/VulkanTest.dir/src/camera/lve_camera.cpp.o.d"
   "/home/rodrigo0345/Work/vulkan-learning/src/device/lve_device.cpp" "CMakeFiles/VulkanTest.dir/src/device/lve_device.cpp.o" "gcc" "CMakeFiles/VulkanTest.dir/src/device/lve_device.cpp.o.d"
   "/home/rodrigo0345/Work/vulkan-learning/src/main.cpp" "CMakeFiles/VulkanTest.dir/src/main.cpp.o" "gcc" "CMakeFiles/VulkanTest.dir/src/main.cpp.o.d"
+  "/home/rodrigo0345/Work/vulkan-learning/src/models/load_model.cpp" "CMakeFiles/VulkanTest.dir/src/models/load_model.cpp.o" "gcc" "CMakeFiles/VulkanTest.dir/src/models/load_model.cpp.o.d"
   "/home/rodrigo0345/Work/vulkan-learning/src/models/lve_model.cpp" "CMakeFiles/VulkanTest.dir/src/models/lve_model.cpp.o" "gcc" "CMakeFiles/VulkanTest.dir/src/models/lve_model.cpp.o.d"
   "/home/rodrigo0345/Work/vulkan-learning/src/pipeline/lve_pipeline.cpp" "CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o" "gcc" "CMakeFiles/VulkanTest.dir/src/pipeline/lve_pipeline.cpp.o.d"
   "/home/rodrigo0345/Work/vulkan-learning/src/render_systems/simple_render_system.cpp" "CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o" "gcc" "CMakeFiles/VulkanTest.dir/src/render_systems/simple_render_system.cpp.o.d"

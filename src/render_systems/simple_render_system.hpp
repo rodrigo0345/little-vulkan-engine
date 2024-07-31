@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../camera/lve_camera.hpp"
 #include "../game_object/lve_game_object.hpp"
 #include "../models/lve_model.hpp"
 #include "../pipeline/lve_pipeline.hpp"
@@ -22,13 +23,14 @@ public:
   SimpleRenderSystem &operator=(const SimpleRenderSystem &) = delete;
 
   void renderGameObjects(VkCommandBuffer commandBuffer,
-                         std::vector<LveGameObject> &gameObjects);
+                         std::vector<LveGameObject> &gameObjects,
+                         const LveCamera &camera);
 
 private:
   void createPipelineLayout();
   void createPipeline(VkRenderPass renderPass);
 
-  LveDevice& lveDevice;
+  LveDevice &lveDevice;
 
   std::unique_ptr<LvePipeline> lvePipeline;
   VkPipelineLayout pipelineLayout;

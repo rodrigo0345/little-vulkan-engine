@@ -30,6 +30,10 @@ public:
     return lveSwapChain->getRenderPass();
   }
 
+  float getAspectRation() const {
+    return lveSwapChain->extentAspectRatio();
+  }
+
   VkCommandBuffer getCurrentCommandBuffer() const {
 
     assert(isFrameStarted &&

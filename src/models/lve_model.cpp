@@ -65,7 +65,7 @@ LveModel::Vertex::getAttributeDescriptions() {
   attributeDescriptions[0].location = 0;
 
   // isto n tem de ser necessáriamente cores, no nosso caso é position
-  attributeDescriptions[0].format = VK_FORMAT_R32G32_SFLOAT;
+  attributeDescriptions[0].format = VK_FORMAT_R32G32B32_SFLOAT;
   attributeDescriptions[0].offset = offsetof(Vertex, position);
 
   // ---- Color information ----

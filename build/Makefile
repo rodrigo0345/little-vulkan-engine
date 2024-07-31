@@ -153,6 +153,30 @@ src/app/lve_app.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/app/lve_app.cpp.s
 .PHONY : src/app/lve_app.cpp.s
 
+src/camera/lve_camera.o: src/camera/lve_camera.cpp.o
+.PHONY : src/camera/lve_camera.o
+
+# target to build an object file
+src/camera/lve_camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/camera/lve_camera.cpp.o
+.PHONY : src/camera/lve_camera.cpp.o
+
+src/camera/lve_camera.i: src/camera/lve_camera.cpp.i
+.PHONY : src/camera/lve_camera.i
+
+# target to preprocess a source file
+src/camera/lve_camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/camera/lve_camera.cpp.i
+.PHONY : src/camera/lve_camera.cpp.i
+
+src/camera/lve_camera.s: src/camera/lve_camera.cpp.s
+.PHONY : src/camera/lve_camera.s
+
+# target to generate assembly for a file
+src/camera/lve_camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/camera/lve_camera.cpp.s
+.PHONY : src/camera/lve_camera.cpp.s
+
 src/device/lve_device.o: src/device/lve_device.cpp.o
 .PHONY : src/device/lve_device.o
 
@@ -200,6 +224,30 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/models/load_model.o: src/models/load_model.cpp.o
+.PHONY : src/models/load_model.o
+
+# target to build an object file
+src/models/load_model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/models/load_model.cpp.o
+.PHONY : src/models/load_model.cpp.o
+
+src/models/load_model.i: src/models/load_model.cpp.i
+.PHONY : src/models/load_model.i
+
+# target to preprocess a source file
+src/models/load_model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/models/load_model.cpp.i
+.PHONY : src/models/load_model.cpp.i
+
+src/models/load_model.s: src/models/load_model.cpp.s
+.PHONY : src/models/load_model.s
+
+# target to generate assembly for a file
+src/models/load_model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanTest.dir/build.make CMakeFiles/VulkanTest.dir/src/models/load_model.cpp.s
+.PHONY : src/models/load_model.cpp.s
 
 src/models/lve_model.o: src/models/lve_model.cpp.o
 .PHONY : src/models/lve_model.o
@@ -357,12 +405,18 @@ help:
 	@echo "... src/app/lve_app.o"
 	@echo "... src/app/lve_app.i"
 	@echo "... src/app/lve_app.s"
+	@echo "... src/camera/lve_camera.o"
+	@echo "... src/camera/lve_camera.i"
+	@echo "... src/camera/lve_camera.s"
 	@echo "... src/device/lve_device.o"
 	@echo "... src/device/lve_device.i"
 	@echo "... src/device/lve_device.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/models/load_model.o"
+	@echo "... src/models/load_model.i"
+	@echo "... src/models/load_model.s"
 	@echo "... src/models/lve_model.o"
 	@echo "... src/models/lve_model.i"
 	@echo "... src/models/lve_model.s"
